@@ -41,17 +41,18 @@ status-website:
     - rel: stylesheet
       href: https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap
   js: |
-    // Remove emoji from "All systems operational" banner
-    const observer = new MutationObserver(() => {
-      document.querySelectorAll('article.up').forEach(el => {
-        el.childNodes.forEach(node => {
-          if (node.nodeType === 3 && /[\u2705\u2611\u2714\u2713\uD83D\uDFE9]/.test(node.textContent)) {
-            node.textContent = node.textContent.replace(/[\u2705\u2611\u2714\u2713\uD83D\uDFE9]\s*/g, '');
+    // Strip emoji from status banners (keep only printable ASCII)
+    new MutationObserver(function() {
+      document.querySelectorAll('article').forEach(function(el) {
+        for (var i = 0; i < el.childNodes.length; i++) {
+          var n = el.childNodes[i];
+          if (n.nodeType === 3) {
+            var clean = n.textContent.replace(/[^\x20-\x7E]/g, '').trim();
+            if (clean !== n.textContent.trim()) n.textContent = ' ' + clean + ' ';
           }
-        });
+        }
       });
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
+    }).observe(document.body, { childList: true, subtree: true });
   css: |
     /* === OpenClaw.rocks Brand Override === */
     /* Override ALL Upptime night theme variables */
