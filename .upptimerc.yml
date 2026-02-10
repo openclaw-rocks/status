@@ -23,34 +23,191 @@ status-website:
       href: https://openclaw.rocks
     - title: GitHub
       href: https://github.com/$OWNER/$REPO
+  metaTags:
+    - name: theme-color
+      content: "#050810"
+  links:
+    - rel: preconnect
+      href: https://fonts.googleapis.com
+    - rel: preconnect
+      href: https://fonts.gstatic.com
+    - rel: stylesheet
+      href: https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap
   css: |
+    /* === OpenClaw.rocks Brand Override === */
+    /* Override ALL Upptime night theme variables */
     :root {
-      --color-background: #0a0a0b !important;
-      --color-text: #fafafa !important;
-      --color-text-light: #a1a1aa !important;
-      --color-primary: #f87171 !important;
+      --body-background-color: #0a0a0b !important;
+      --body-text-color: #fafafa !important;
+      --card-background-color: rgba(20, 20, 22, 0.9) !important;
+      --card-border-color: rgba(255, 255, 255, 0.08) !important;
+      --nav-background-color: rgba(20, 20, 22, 0.9) !important;
+      --nav-border-bottom-color: rgba(248, 113, 113, 0.1) !important;
+      --nav-current-border-bottom-color: #f87171 !important;
+      --down-border-left-color: #ef4444 !important;
+      --down-background-color: rgba(239, 68, 68, 0.1) !important;
+      --down-color-color: #fafafa !important;
+      --degraded-border-left-color: #eab308 !important;
+      --degraded-color-color: #fafafa !important;
+      --up-border-left-color: #22c55e !important;
+      --up-color-color: #fafafa !important;
+      --tag-color: #fff !important;
+      --tag-up-background-color: #22c55e !important;
+      --tag-down-background-color: #ef4444 !important;
+      --tag-degraded-background-color: #eab308 !important;
+      --change-background-color: rgba(234, 179, 8, 0.15) !important;
+      --code-color: #f87171 !important;
+      --code-background-color: rgba(255, 255, 255, 0.05) !important;
+      --error-button-border-color: rgba(248, 113, 113, 0.4) !important;
+      --error-button-background-color: transparent !important;
+      --error-button-color: #f87171 !important;
+      --submit-button-background-color: #f87171 !important;
+      --submit-button-color: #fff !important;
+      --submit-button-border-color: #f87171 !important;
+      --graph-opacity: 1 !important;
     }
+
+    /* Font: Inter, matching BRAND.md */
     body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
       background: #0a0a0b !important;
       color: #fafafa !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
+
+    /* Headings */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+      color: #fafafa !important;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      opacity: 1 !important;
+      color: #a1a1aa !important;
+    }
+
+    /* Links: coral accent */
     a {
       color: #f87171 !important;
+      text-decoration: none;
+      transition: color 0.15s ease;
     }
     a:hover {
       color: #fca5a5 !important;
     }
-    .navbar {
+
+    /* Navbar: glassmorphism */
+    nav {
       background: rgba(20, 20, 22, 0.9) !important;
       backdrop-filter: blur(20px) !important;
       -webkit-backdrop-filter: blur(20px) !important;
       border-bottom: 1px solid rgba(248, 113, 113, 0.1) !important;
     }
-    .status-up, .tag.is-success {
-      background-color: #22c55e !important;
+    nav a {
+      color: #a1a1aa !important;
+      transition: color 0.15s ease;
     }
-    .status-down, .tag.is-danger {
-      background-color: #f87171 !important;
+    nav a:hover, nav a[aria-current] {
+      color: #fafafa !important;
+    }
+    nav .logo div {
+      color: #fafafa !important;
+    }
+    [aria-current] {
+      border-bottom-color: #f87171 !important;
     }
 
-# See https://upptime.js.org/docs/configuration
+    /* Cards: glassmorphism with subtle borders */
+    article {
+      background: rgba(20, 20, 22, 0.9) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      border-radius: 12px !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+    }
+    article.up {
+      border-left: 3px solid #22c55e !important;
+    }
+    article.down {
+      border-left: 3px solid #ef4444 !important;
+    }
+    article.degraded {
+      border-left: 3px solid #eab308 !important;
+    }
+    article.down-active {
+      background: rgba(239, 68, 68, 0.08) !important;
+      border-color: rgba(239, 68, 68, 0.3) !important;
+    }
+    article + article {
+      margin-top: 0.75rem !important;
+    }
+
+    /* Status tags: pill-shaped */
+    .tag {
+      border-radius: 9999px !important;
+      font-size: 0.75rem !important;
+      font-weight: 600 !important;
+      padding: 0.25rem 0.75rem !important;
+      color: #fff !important;
+    }
+
+    /* Footer */
+    footer {
+      color: #71717a !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    }
+    footer a {
+      color: #a1a1aa !important;
+    }
+    footer a:hover {
+      color: #f87171 !important;
+    }
+
+    /* Time range selector */
+    form label {
+      color: #a1a1aa !important;
+      font-size: 0.875rem !important;
+    }
+    input[type="radio"]:checked + label {
+      color: #f87171 !important;
+    }
+
+    /* Lead paragraph */
+    .lead {
+      color: #a1a1aa !important;
+    }
+
+    /* Live status section header */
+    .changed h2 {
+      color: #fafafa !important;
+    }
+    .changed + section .data {
+      background: rgba(234, 179, 8, 0.1) !important;
+    }
+
+    /* Loading spinner */
+    .loading svg {
+      stroke: #71717a !important;
+    }
+
+    /* Container: match brand max-width */
+    .container {
+      max-width: 800px !important;
+    }
+
+    /* Submit/error buttons */
+    .submit-button {
+      background: linear-gradient(135deg, #f87171 0%, #dc2626 100%) !important;
+      color: #fff !important;
+      border: none !important;
+      border-radius: 8px !important;
+      font-weight: 600 !important;
+    }
+    a.error-button {
+      border-color: rgba(248, 113, 113, 0.4) !important;
+      background: transparent !important;
+      color: #f87171 !important;
+      border-radius: 8px !important;
+    }
