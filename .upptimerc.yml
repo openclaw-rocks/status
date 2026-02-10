@@ -1,0 +1,56 @@
+owner: OpenClaw-rocks
+repo: status
+
+sites:
+  - name: OpenClaw.rocks
+    url: https://openclaw.rocks
+  - name: Health API
+    url: https://openclaw.rocks/api/health
+
+status-website:
+  cname: status.openclaw.rocks
+  logoUrl: https://openclaw.rocks/favicon.svg
+  favicon: https://openclaw.rocks/favicon.ico
+  faviconSvg: https://openclaw.rocks/favicon.svg
+  name: OpenClaw Status
+  theme: night
+  introTitle: "**[OpenClaw.rocks](https://openclaw.rocks)** system status"
+  introMessage: Real-time uptime data powered by [Upptime](https://github.com/upptime/upptime). Monitored every 5 minutes via GitHub Actions.
+  navbar:
+    - title: Status
+      href: /
+    - title: OpenClaw.rocks
+      href: https://openclaw.rocks
+    - title: GitHub
+      href: https://github.com/$OWNER/$REPO
+  css: |
+    :root {
+      --color-background: #0a0a0b !important;
+      --color-text: #fafafa !important;
+      --color-text-light: #a1a1aa !important;
+      --color-primary: #f87171 !important;
+    }
+    body {
+      background: #0a0a0b !important;
+      color: #fafafa !important;
+    }
+    a {
+      color: #f87171 !important;
+    }
+    a:hover {
+      color: #fca5a5 !important;
+    }
+    .navbar {
+      background: rgba(20, 20, 22, 0.9) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border-bottom: 1px solid rgba(248, 113, 113, 0.1) !important;
+    }
+    .status-up, .tag.is-success {
+      background-color: #22c55e !important;
+    }
+    .status-down, .tag.is-danger {
+      background-color: #f87171 !important;
+    }
+
+# See https://upptime.js.org/docs/configuration
