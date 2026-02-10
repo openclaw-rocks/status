@@ -33,6 +33,12 @@ status-website:
       href: https://fonts.gstatic.com
     - rel: stylesheet
       href: https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap
+  i18n:
+    allSystemsOperational: All systems operational
+    activeIncidents: Active incidents
+    pastIncidents: Past incidents
+    pastScheduledMaintenance: Past scheduled maintenance
+    footer: "This page is [open source]($REPO), powered by [Upptime](https://upptime.js.org)"
   css: |
     /* === OpenClaw.rocks Brand Override === */
     /* Override ALL Upptime night theme variables */
@@ -98,25 +104,63 @@ status-website:
       color: #fca5a5 !important;
     }
 
-    /* Navbar: glassmorphism */
+    /* Navbar: sticky glassmorphism matching main site */
     nav {
-      background: rgba(20, 20, 22, 0.9) !important;
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 100 !important;
+      background: rgba(10, 10, 11, 0.8) !important;
       backdrop-filter: blur(20px) !important;
       -webkit-backdrop-filter: blur(20px) !important;
-      border-bottom: 1px solid rgba(248, 113, 113, 0.1) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+      padding: 0 !important;
+    }
+    nav .container {
+      padding-top: 0.75rem !important;
+      padding-bottom: 0.75rem !important;
     }
     nav a {
       color: #a1a1aa !important;
       transition: color 0.15s ease;
+      text-decoration: none !important;
     }
-    nav a:hover, nav a[aria-current] {
+    nav a:hover {
       color: #fafafa !important;
     }
     nav .logo div {
       color: #fafafa !important;
+      font-weight: 600 !important;
+      font-size: 0.95rem !important;
+    }
+
+    /* Nav links: animated underline from center (matching main site) */
+    nav ul a {
+      position: relative !important;
+      padding-bottom: 2px !important;
+      font-size: 0.875rem !important;
+      font-weight: 500 !important;
+    }
+    nav ul a::after {
+      content: '' !important;
+      position: absolute !important;
+      bottom: -2px !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 2px !important;
+      background: #f87171 !important;
+      transform: scaleX(0) !important;
+      transform-origin: center !important;
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+    nav ul a:hover::after {
+      transform: scaleX(1) !important;
     }
     [aria-current] {
-      border-bottom-color: #f87171 !important;
+      color: #fafafa !important;
+      border-bottom: none !important;
+    }
+    [aria-current]::after {
+      transform: scaleX(1) !important;
     }
 
     /* Cards: glassmorphism with subtle borders */
