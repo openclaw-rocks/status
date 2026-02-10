@@ -1,0 +1,38 @@
+[
+  {
+    "name": "OpenClaw.rocks",
+    "url": "https://openclaw.rocks",
+    "icon": "https://icons.duckduckgo.com/ip3/openclaw.rocks.ico",
+    "slug": "open-claw-rocks",
+    "status": "up",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 635,
+    "timeDay": 635,
+    "timeWeek": 635,
+    "timeMonth": 635,
+    "timeYear": 635,
+    "dailyMinutesDown": {}
+  },
+  {
+    "name": "Health API",
+    "url": "https://openclaw.rocks/api/health",
+    "icon": "https://icons.duckduckgo.com/ip3/openclaw.rocks.ico",
+    "slug": "health-api",
+    "status": "up",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 117,
+    "timeDay": 117,
+    "timeWeek": 117,
+    "timeMonth": 117,
+    "timeYear": 117,
+    "dailyMinutesDown": {}
+  }
+]
