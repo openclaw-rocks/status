@@ -86,6 +86,7 @@ status-website:
       --submit-button-color: #fff !important;
       --submit-button-border-color: #f87171 !important;
       --graph-opacity: 1 !important;
+      --graph-filter: sepia(1) hue-rotate(330deg) saturate(2.5) brightness(1.1) !important;
     }
 
     /* Font: Inter, matching BRAND.md */
