@@ -1,7 +1,7 @@
 url: https://paperclip.inc/
-status: up
-code: 200
-responseTime: 1043
-lastUpdated: 2026-08-22T23:26:13.674Z
+status: down
+code: 500
+responseTime: 30409
+lastUpdated: 2026-08-23T07:20:30.205Z
 startTime: 2026-05-26T10:11:48.314Z
 generator: Upptime <https://github.com/upptime/upptime>
